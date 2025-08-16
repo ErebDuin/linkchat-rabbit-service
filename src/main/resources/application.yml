@@ -1,0 +1,20 @@
+spring:
+  rabbitmq:
+    host: b-188e46d3-f93f-40b3-aed8-4bb2c372cff3.mq.us-east-2.on.aws
+    port: 5671
+    username: linkchat
+    password: LinkChat.2025!
+    ssl:
+      enabled: true
+    virtual-host: /
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: sysportnov@gmail.com
+    password: jepemzinknaipzjc
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
