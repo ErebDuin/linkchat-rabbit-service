@@ -1,5 +1,6 @@
 package com.example.linkchat_rabbit_service.repository;
 
+import com.example.linkchat_rabbit_service.model.Chat;
 import com.example.linkchat_rabbit_service.model.ChatMessage;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -12,11 +13,11 @@ import java.util.List;
 public interface ChatMessageRepository extends JpaRepository<ChatMessage, Long> {
 
     // Find messages by chatId (using the plain chatId column)
-    List<ChatMessage> findByChatIdOrderByTimestampAsc(Long chatId);
+    List<ChatMessage> findByChatIdOrderByTimestampAsc(Chat chatId);
 
     // Optional: native query if you want SQL instead of JPQL
-    @Query(value = "SELECT * FROM messages WHERE chat_id = ?1 ORDER BY timestamp ASC", nativeQuery = true)
-    List<ChatMessage> getMessagesByChatIdNative(Long chatId);
+//    @Query(value = "SELECT * FROM messages WHERE chat_id = ?1 ORDER BY timestamp ASC", nativeQuery = true)
+//    List<ChatMessage> getMessagesByChatIdNative(Chat chatId);
 
     // Find all messages ordered by timestamp
     List<ChatMessage> findAllByOrderByTimestampAsc();

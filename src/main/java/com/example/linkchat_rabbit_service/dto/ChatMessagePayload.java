@@ -1,5 +1,7 @@
 package com.example.linkchat_rabbit_service.dto;
 
+import com.example.linkchat_rabbit_service.model.Chat;
+
 public class ChatMessagePayload {
     private Long chatId;
     private String sender;
